@@ -5278,7 +5278,9 @@ function MovAny_OptionsOnLoad(f)
 end
 
 function MovAny_OptionsOnShow()
-	MAOptVersion:SetText("Version: |cffeeeeee"..GetAddOnMetadata("MoveAnything", "Version").."|r")
+	MAOptVersion:SetText(MOVANY.MA_OPT_VERSION..": |cffeeeeee"..GetAddOnMetadata("MoveAnything", "Version").."|r")
+	MAOptFrameListRows:SetText(MOVANY.MA_OPT_FRAME_LIST_ROWS..":")
+	MAOptProfile:SetText(MOVANY.MA_OPT_PROFILE..":")
 	MAOptAlwaysShowNudger:SetChecked(MADB.alwaysShowNudger)
 	MAOptNoBags:SetChecked(MADB.noBags)
 	MAOptPlaySound:SetChecked(MADB.playSound)
@@ -5290,6 +5292,7 @@ function MovAny_OptionsOnShow()
 	MAOptDontSyncWhenLeavingCombat:SetChecked(MADB.dontSyncWhenLeavingCombat)
 	MAOptDontSearchFrameNames:SetChecked(MADB.dontSearchFrameNames)
 	MAOptDisableErrorMessages:SetChecked(MADB.disableErrorMessages)
+
 	if MADB.frameListRows then
 		MAOptRowsSlider:SetValue(MADB.frameListRows)
 	end

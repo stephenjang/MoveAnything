@@ -112,7 +112,7 @@ function MovAny:CreatePortDialog()
 	profileLabel:SetHeight(20)
 	profileLabel:SetJustifyH("LEFT")
 	profileLabel:SetPoint("TOPLEFT", profileCheck, "TOPRIGHT", 1, 2)
-	profileLabel:SetText("Profile")
+	profileLabel:SetText(MOVANY.MA_OPT_PROFILE)
 
 
 	textCheck:SetPoint("TOPLEFT", profileLabel, "TOPRIGHT", 9, -2)
@@ -147,7 +147,7 @@ function MovAny:CreatePortDialog()
 	textLabel:SetHeight(20)
 	textLabel:SetJustifyH("LEFT")
 	textLabel:SetPoint("TOPLEFT", textCheck, "TOPRIGHT", 1, 2)
-	textLabel:SetText("Text String")
+	textLabel:SetText(MOVANY.MA_OPT_TEXT_STRING)
 
 	profileDropDownButton:SetPoint("TOPLEFT", dirLabel, "BOTTOMLEFT", 0, -10)
 	MSA_DropDownMenu_SetWidth(profileDropDownButton, 200)
@@ -156,7 +156,7 @@ function MovAny:CreatePortDialog()
 	profileNoneLabel:SetHeight(20)
 	profileNoneLabel:SetJustifyH("LEFT")
 	profileNoneLabel:SetPoint("TOPLEFT", dirLabel, "BOTTOMLEFT", 0, -10)
-	profileNoneLabel:SetText("No profiles has modified this frame")
+	profileNoneLabel:SetText(MOVANY.MA_OPT_PROFILE_PROFILE_NOT_MODIFIED_PLURAL)
 
 	textEditBox:SetFontObject("GameFontHighlightSmall")
 	textEditBox:SetSize(311, 20)
@@ -254,26 +254,26 @@ function MovAny:CreatePortDialog()
 		local s = ""
 		local dir = ""
 		if mode == 1 then
-			s = "Import"
-			dir = "From"
+			s = MOVANY.MA_OPT_PROFILE_IMPORT
+			dir = MOVANY.MA_OPT_PROFILE_FROM
 		else
-			s = "Export"
-			dir = "To"
+			s = MOVANY.MA_OPT_PROFILE_EXPORT
+			dir = MOVANY.MA_OPT_PROFILE_TO
 		end
 		actionButton:SetText(s)
 		if fn then
 			s = s..":"
 		else
-			s = s.." profile"
+			s = string.format(MOVANY.MA_OPT_PROFILE_EXPORT_IMPORT_LABEL, s)
 		end
 		actionLabel:SetText(s)
 		if fn then
 			frameNameLabel:SetText(fn)
 			frameNameLabel:Show()
-			profileNoneLabel:SetText("No profile has modified this frame")
+			profileNoneLabel:SetText(MOVANY.MA_OPT_PROFILE_PROFILE_NOT_MODIFIED)
 		else
 			frameNameLabel:Hide()
-			profileNoneLabel:SetText("No profiles available")
+			profileNoneLabel:SetText(MOVANY.MA_OPT_PROFILE_NO_PROFILES)
 		end
 
 		dirLabel:SetText(dir..":")
