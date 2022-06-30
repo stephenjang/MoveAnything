@@ -1,35 +1,35 @@
 <Bindings>
-	<Binding name="Toggle MA window" header="MOVEANYTHING" category="ADDONS">
+	<Binding name="TOGGLE_MA_WINDOW" header="MOVEANYTHING" category="ADDONS">
 		MovAny:ToggleGUI()
 	</Binding>
-	<Binding name="Move frame - Safe" category="ADDONS">
+	<Binding name="MOVE_FRAME_SAFE" category="ADDONS">
 		MovAny:SafeMoveFrameAtCursor()
 	</Binding>
-	<Binding name="Edit frame - Safe" category="ADDONS">
+	<Binding name="EDIT_FRAME_SAFE" category="ADDONS">
 		MovAny:SafeMAFEFrameAtCursor()
 	</Binding>
-	<Binding name="Hide frame - Safe" category="ADDONS">
+	<Binding name="HIDE_FRAME_SAFE" category="ADDONS">
 		MovAny:SafeHideFrameAtCursor()
 	</Binding>
-	<Binding name="Reset frame - Safe" category="ADDONS">
+	<Binding name="RESET_FRAME_SAFE" category="ADDONS">
 		MovAny:SafeResetFrameAtCursor()
 	</Binding>
-	<Binding name="Move frame - Exact" category="ADDONS">
+	<Binding name="MOVE_FRAME_EXACT" category="ADDONS">
 		MovAny:MoveFrameAtCursor()
 	</Binding>
-	<Binding name="Edit frame - Exact" category="ADDONS">
+	<Binding name="EDIT_FRAME_EXACT" category="ADDONS">
 		MovAny:MAFEFrameAtCursor()
 	</Binding>
-	<Binding name="Hide frame - Exact" category="ADDONS">
+	<Binding name="HIDE_FRAME_EXACT" category="ADDONS">
 		MovAny:HideFrameAtCursor()
 	</Binding>
-	<Binding name="Reset frame - Exact" category="ADDONS">
+	<Binding name="RESET_FRAME_EXACT" category="ADDONS">
 		MovAny:ResetFrameAtCursor()
 	</Binding>
-	<Binding name="Synchronize all elements" category="ADDONS">
+	<Binding name="SYNCHRONIZE_ALL_ELEMENTS" category="ADDONS">
 		MovAny:SyncAllFrames()
 	</Binding>
-	<Binding name="Show frame info" category="ADDONS">
+	<Binding name="SHOW_FRAME_INFO" category="ADDONS">
 		MovAny:DebugFrameAtCursor()
 	</Binding>
 </Bindings>

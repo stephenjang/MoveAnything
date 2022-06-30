@@ -5,6 +5,17 @@ end
 local MOVANY = {
 	ADD = "Aggiungi",
 	ADDNEW = "Aggiugni nuovo",
+	BINDING_NAME_EDIT_FRAME_EXACT = "Edit frame - Exact", -- Missing translation
+	BINDING_NAME_EDIT_FRAME_SAFE = "Edit frame - Safe", -- Missing translation
+	BINDING_NAME_HIDE_FRAME_EXACT = "Hide frame - Exact", -- Missing translation
+	BINDING_NAME_HIDE_FRAME_SAFE = "Hide frame - Safe", -- Missing translation
+	BINDING_NAME_MOVE_FRAME_EXACT = "Move frame - Exact", -- Missing translation
+	BINDING_NAME_MOVE_FRAME_SAFE = "Move frame - Safe", -- Missing translation
+	BINDING_NAME_RESET_FRAME_EXACT = "Reset frame - Exact", -- Missing translation
+	BINDING_NAME_RESET_FRAME_SAFE = "Reset frame - Safe", -- Missing translation
+	BINDING_NAME_SHOW_FRAME_INFO = "Show frame info", -- Missing translation
+	BINDING_NAME_SYNCHRONIZE_ALL_ELEMENTS = "Synchronize all elements", -- Missing translation
+	BINDING_NAME_TOGGLE_MA_WINDOW = "Toggle MA window", -- Missing translation
 	CLOSEGUIONESC = "Il tasto esc chiude il menu principale",
 	CMD_SYNTAX_DELETE = "Sintassi: /movedelete NomeProfilo",
 	CMD_SYNTAX_EXPORT = "Sintassi: /moveexport NomeProfilo",

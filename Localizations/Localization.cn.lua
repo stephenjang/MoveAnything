@@ -5,6 +5,17 @@ end
 local MOVANY = {
 	ADD = "增加",
 	ADDNEW = "增加新的",
+	BINDING_NAME_EDIT_FRAME_EXACT = "Edit frame - Exact", -- Missing translation
+	BINDING_NAME_EDIT_FRAME_SAFE = "Edit frame - Safe", -- Missing translation
+	BINDING_NAME_HIDE_FRAME_EXACT = "Hide frame - Exact", -- Missing translation
+	BINDING_NAME_HIDE_FRAME_SAFE = "Hide frame - Safe", -- Missing translation
+	BINDING_NAME_MOVE_FRAME_EXACT = "Move frame - Exact", -- Missing translation
+	BINDING_NAME_MOVE_FRAME_SAFE = "Move frame - Safe", -- Missing translation
+	BINDING_NAME_RESET_FRAME_EXACT = "Reset frame - Exact", -- Missing translation
+	BINDING_NAME_RESET_FRAME_SAFE = "Reset frame - Safe", -- Missing translation
+	BINDING_NAME_SHOW_FRAME_INFO = "Show frame info", -- Missing translation
+	BINDING_NAME_SYNCHRONIZE_ALL_ELEMENTS = "Synchronize all elements", -- Missing translation
+	BINDING_NAME_TOGGLE_MA_WINDOW = "Toggle MA window", -- Missing translation
 	CLOSEGUIONESC = "ESC键关闭插件主窗口",
 	CMD_SYNTAX_DELETE = "Syntax: /movedelete ProfileName", -- Missing translation
 	CMD_SYNTAX_EXPORT = "Syntax: /moveexport ProfileName", -- Missing translation
