@@ -1359,7 +1359,7 @@ function MovAny:CreateFrameEditor(id, name)
 	scaleLabel:SetSize(leftColumnWidth, 20)
 	scaleLabel:SetJustifyH("LEFT")
 	scaleLabel:SetPoint("TOPLEFT", heightLabel, "BOTTOMLEFT", 0, -20)
-	scaleLabel:SetText("Scale:")
+	scaleLabel:SetText(MOVANY.SCALE..":")
 
 	local scaleEdit = CreateFrame("EditBox", fn.."ScaleEdit", fe, "InputBoxTemplate")
 
@@ -1497,7 +1497,7 @@ function MovAny:CreateFrameEditor(id, name)
 	alphaLabel:SetSize(leftColumnWidth, 20)
 	alphaLabel:SetJustifyH("LEFT")
 	alphaLabel:SetPoint("TOPLEFT", scaleLabel, "BOTTOMLEFT", 0, -2)
-	alphaLabel:SetText("Alpha:")
+	alphaLabel:SetText(MOVANY.ALPHA..":")
 
 	local alphaEdit = CreateFrame("EditBox", fn.."AlphaEdit", fe, "InputBoxTemplate")
 
@@ -2031,7 +2031,7 @@ function MovAny:CreateFrameEditor(id, name)
 	infoTextAlphaLabel:SetSize(leftColumnWidth, 16)
 	infoTextAlphaLabel:SetJustifyH("RIGHT")
 	infoTextAlphaLabel:SetPoint("TOPLEFT", infoTextXLabel, "BOTTOMLEFT", 0, -1)
-	infoTextAlphaLabel:SetText("Alpha:")
+	infoTextAlphaLabel:SetText(MOVANY.ALPHA..":")
 
 	local infoTextAlpha = fe:CreateFontString()
 	infoTextAlpha:SetFontObject("GameFontNormalSmall")

@@ -498,7 +498,7 @@
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<Button name="$parentReset" inherits="UIPanelButtonTemplate" text="Reset">
+			<Button name="$parentReset" inherits="UIPanelButtonTemplate">
 				<Size>
 					<AbsDimension x="44" y="20"/>
 				</Size>
@@ -510,6 +510,9 @@
 					</Anchor>
 				</Anchors>
 				<Scripts>
+					<OnLoad>
+						_G[self:GetName().."Text"]:SetText(MOVANY.RESET)
+					</OnLoad>
 					<OnClick>
 						MovAny:OnResetCheck(self)
 					</OnClick>
@@ -666,7 +669,7 @@
 				<Scripts>
 					<OnLoad>
 						_G[self:GetName().."Text"]:SetText("FE")
-						self.tooltipText = "Toggle visibility on frame editors"
+						self.tooltipText = MOVANY.TOGGLE_FRAME_EDITORS_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						if IsShiftKeyDown() then
@@ -695,7 +698,7 @@
 				<Scripts>
 					<OnLoad>
 						_G[self:GetName().."Text"]:SetText("M")
-						self.tooltipText = "Toggles all movers"
+						self.tooltipText = MOVANY.TOGGLE_MOVERS_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						if IsShiftKeyDown() then
@@ -720,7 +723,7 @@
 				<Scripts>
 					<OnLoad>
 						_G[self:GetName().."Text"]:SetText("MF")
-						self.tooltipText = "Show only modified frames"
+						self.tooltipText = MOVANY.TOGGLE_MODIFIED_FRAMES_ONLY_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						MovAny:OnCheckToggleModifiedFramesOnly(self)
@@ -742,7 +745,7 @@
 				<Scripts>
 					<OnLoad>
 						_G[self:GetName().."Text"]:SetText("CE")
-						self.tooltipText = "Toggle all categories"
+						self.tooltipText = MOVANY.TOGGLE_CATEGORIES_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						MovAny:OnCheckToggleCategories(self)
@@ -764,7 +767,7 @@
 				<Scripts>
 					<OnLoad>
 						_G[self:GetName().."Text"]:SetText("FS")
-						self.tooltipText = "Toggle Blizzard's framestack tooltip\n\n A very helpful tool for finding frame names for use with /move or /hide"
+						self.tooltipText = MOVANY.TOGGLE_FRAME_STACK_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						UIParentLoadAddOn("Blizzard_DebugTools")

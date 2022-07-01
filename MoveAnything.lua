@@ -3163,11 +3163,12 @@ function MovAny:MoverOnSizeChanged(mover)
 		local brief, long
 		if MovAny.Scale:CanBeScaled(f) then
 			if mover.MAE.scaleWH then
-				brief = "W: "..MANumFor(f:GetWidth()).." H:"..MANumFor(f:GetHeight())
+				-- brief = "W: "..MANumFor(f:GetWidth()).." H:"..MANumFor(f:GetHeight())
+				brief = string.format(MOVANY.CAN_BE_SCALED_LABEL, MANumFor(f:GetWidth()), MANumFor(f:GetHeight()))
 				long = brief
 			else
 				brief = MANumFor(f:GetScale())
-				long = "Scale: "..brief
+				long = MOVANY.SCALE..": "..brief
 			end
 			label:Show()
 			label:SetText(brief)
@@ -3250,7 +3251,7 @@ function MovAny:MoverOnMouseWheel(mover, arg1)
 	label:SetText(MANumFor(alpha * 100).."%")
 	if mover == self.currentMover then
 		_G["MANudgerInfoLabel"]:Show()
-		_G["MANudgerInfoLabel"]:SetText("Alpha:"..MANumFor(alpha * 100).."%")
+		_G["MANudgerInfoLabel"]:SetText(MOVANY.ALPHA..":"..MANumFor(alpha * 100).."%")
 	end
 	self:UpdateGUIIfShown(true)
 end
@@ -3565,9 +3566,9 @@ function MovAny:UpdateGUI(recount)
 				text = _G[ prefix..i.."FrameNameHighlight" ]
 				text:Show()
 				if o.collapsed and o.items > 0 then
-					text:SetText("+ "..o.name)
+					text:SetText("+ "..o.displayName)
 				else
-					text:SetText("   "..o.name)
+					text:SetText("-  "..o.displayName)
 				end
 				frameNameLabel.tooltipLines = nil
 			else
@@ -3803,14 +3804,14 @@ function MovAny:NudgerOnUpdate()
 		if objTest then
 			name = objTest:GetName()
 			if name then
-				text = text.."Safe: "..name
+				text = text..MOVANY.SAFE..": "..name
 			end
 		else
 			objTest = self:GetTopFrameParent(obj)
 			if objTest then
 				name = objTest:GetName()
 				if name then
-					text = text.."Safe: "..objTest:GetName()
+					text = text..MOVANY.SAFE..": "..objTest:GetName()
 				end
 			end
 		end
@@ -3818,17 +3819,17 @@ function MovAny:NudgerOnUpdate()
 	if obj and obj ~= WorldFrame and obj:GetName() then
 		name = obj:GetName()
 		if name then
-			text2 = "Mouseover: "..text2..name
+			text2 = MOVANY.MOUSEOVER..text2..name
 		end
 		if obj:GetParent()  and obj:GetParent() ~= WorldFrame and obj:GetParent():GetName() then
 			name = obj:GetParent():GetName()
 			if name then
-				text2 = text2.."\nParent: "..name
+				text2 = text2.."\n"..MOVANY.PARENT..": "..name
 			end
 			if obj:GetParent():GetParent() and obj:GetParent():GetParent() ~= WorldFrame and obj:GetParent():GetParent():GetName() then
 				name = obj:GetParent():GetParent():GetName()
 				if name then
-					text2 = text2.."\nParent's Parent: "..name
+					text2 = text2.."\n"..MOVANY.PARENTS_PARENT..": "..name
 				end
 			end
 		end
