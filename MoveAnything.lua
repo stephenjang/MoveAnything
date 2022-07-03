@@ -5279,6 +5279,9 @@ function MovAny_OptionsOnLoad(f)
 end
 
 function MovAny_OptionsOnShow()
+	MAOptFrameTitle:SetText("MoveAnything")
+	MAOptFrameDescription:SetText(GetAddOnMetadata("MoveAnything", "Notes"))
+	MAOptFrameDescription:SetWidth(590)
 	MAOptVersion:SetText(MOVANY.MA_OPT_VERSION..": |cffeeeeee"..GetAddOnMetadata("MoveAnything", "Version").."|r")
 	MAOptFrameListRows:SetText(MOVANY.MA_OPT_FRAME_LIST_ROWS..":")
 	MAOptProfile:SetText(MOVANY.MA_OPT_PROFILE..":")

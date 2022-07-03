@@ -8,9 +8,23 @@
 
 		<Layers>
 			<Layer level="BACKGROUND">
-				<FontString name="MAOptFrameListRows" inherits="GameFontNormal">
+				<FontString name="MAOptFrameTitle" inherits="GameFontNormalLargeLeftTop">
 					<Anchors>
 						<Anchor point="TOPLEFT" relativeTo="MoveAnythingOptions" relativePoint="TOPLEFT">
+							<Offset x="16" y="-16"/>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="MAOptFrameDescription" inherits="GameFontHighlightSmallLeftTop">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="MAOptFrameTitle" relativePoint="BOTTOMLEFT">
+							<Offset x="0" y="-8"/>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="MAOptFrameListRows" inherits="GameFontNormal">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="MAOptFrameDescription" relativePoint="BOTTOMLEFT">
 							<Offset>
 								<AbsDimension x="15" y="-30"/>
 							</Offset>
@@ -19,7 +33,7 @@
 				</FontString>
 				<FontString name="MAOptProfile" inherits="GameFontNormal">
 					<Anchors>
-						<Anchor point="TOPLEFT" relativeTo="MoveAnythingOptions" relativePoint="TOPLEFT">
+						<Anchor point="TOPLEFT" relativeTo="MAOptFrameDescription" relativePoint="BOTTOMLEFT">
 							<Offset>
 								<AbsDimension x="15" y="-63"/>
 							</Offset>
@@ -44,7 +58,7 @@
 					<AbsDimension x="220" y="16"/>
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="MoveAnythingOptions" relativePoint="TOPLEFT">
+					<Anchor point="TOPLEFT" relativeTo="MAOptFrameDescription" relativePoint="BOTTOMLEFT">
 						<Offset>
 							<AbsDimension x="95" y="-25"/>
 						</Offset>
