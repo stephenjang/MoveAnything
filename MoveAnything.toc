@@ -3,6 +3,15 @@
 ## Version: 18.0.8
 ## Author: Wagthaa
 ## Notes: Move, scale, hide and adjust transparency of just about any screen element in the game.
+## Notes-ptBR: Mova, dimensione, oculte e ajuste a transparência de praticamente qualquer elemento de tela no jogo.
+## Notes-zhCN: 移动, 缩放, 隐藏和调整游戏中几乎任何屏幕元素的透明度.
+## Notes-deDE: Bewegen, skalieren, verstecken und passen Sie die Transparenz von nahezu jedem Bildschirmelement im Spiel an.
+## Notes-esMX: Mueva, escale, oculte y ajuste la transparencia de casi cualquier elemento de la pantalla en el juego.
+## Notes-frFR: Déplacez, mettez à l'échelle, masquez et ajustez la transparence de presque tous les éléments d'écran du jeu.
+## Notes-itIT: Sposta, ridimensiona, nascondi e regola la trasparenza di qualsiasi elemento dello schermo nel gioco.
+## Notes-koKR: 게임에서 거의 모든 화면 요소의 이동, 크기, 숨기기, 투명도를 조절합니다.
+## Notes-ruRU: Перемещайте, масштабируйте, скрывайте и настраивайте прозрачность практически любого элемента экрана в игре.
+## Notes-zhTW: 移動, 縮放, 隱藏和調整遊戲中幾乎任何屏幕元素的透明度.
 ## DefaultState: Enabled
 ## SavedVariables: MADB
 
