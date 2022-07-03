@@ -17,6 +17,7 @@
 
 Libs\LibStub\LibStub.lua
 Libs\MSA-DropDownMenu-1.0\MSA-DropDownMenu-1.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
 
 Localizations\Localization.br.lua
 Localizations\Localization.cn.lua
@@ -45,6 +46,8 @@ Modules\Scale.lua
 Modules\Visibility.lua
 
 FrameList.lua
+
+ldb.lua
 
 MoveAnything.xml
 BlizzardOptions.xml
