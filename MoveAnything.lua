@@ -301,25 +301,25 @@ local MovAny = {
 	movers = { },
 	frameEditors = { },
 	DDMPointList = {
-		{"Top Left", "TOPLEFT"},
-		{"Top", "TOP"},
-		{"Top Right", "TOPRIGHT"},
-		{"Left", "LEFT"},
-		{"Center", "CENTER"},
-		{"Right", "RIGHT"},
-		{"Bottom Left", "BOTTOMLEFT"},
-		{"Bottom", "BOTTOM"},
-		{"Bottom Right", "BOTTOMRIGHT"},
+		{MOVANY.DDM_POINT_TOP_LEFT, "TOPLEFT"},
+		{MOVANY.DDM_POINT_TOP, "TOP"},
+		{MOVANY.DDM_POINT_TOP_RIGHT, "TOPRIGHT"},
+		{MOVANY.DDM_POINT_LEFT, "LEFT"},
+		{MOVANY.DDM_POINT_CENTER, "CENTER"},
+		{MOVANY.DDM_POINT_RIGHT, "RIGHT"},
+		{MOVANY.DDM_POINT_BOTTOM_LEFT, "BOTTOMLEFT"},
+		{MOVANY.DDM_POINT_BOTTOM, "BOTTOM"},
+		{MOVANY.DDM_POINT_BOTTOM_RIGHT, "BOTTOMRIGHT"},
 	},
 	DDMStrataList = {
-		{"Background", "BACKGROUND"},
-		{"Low", "LOW"},
-		{"Medium", "MEDIUM"},
-		{"High", "HIGH"},
-		{"Dialog", "DIALOG"},
-		{"Fullscreen", "FULLSCREEN"},
-		{"Fullscreen Dialog", "FULLSCREEN_DIALOG"},
-		{"Tooltip", "TOOLTIP"},
+		{MOVANY.DDM_STRATA_BACKGROUND, "BACKGROUND"},
+		{MOVANY.DDM_STRATA_LOW, "LOW"},
+		{MOVANY.DDM_STRATA_MEDIUM, "MEDIUM"},
+		{MOVANY.DDM_STRATA_HIGH, "HIGH"},
+		{MOVANY.DDM_STRATA_DIALOG, "DIALOG"},
+		{MOVANY.DDM_STRATA_FULLSCREEN, "FULLSCREEN"},
+		{MOVANY.DDM_STRATA_FULLSCREEN_DIALOG, "FULLSCREEN_DIALOG"},
+		{MOVANY.DDM_STRATA_TOOLTIP, "TOOLTIP"},
 	},
 	DetachFromParent = {
 		--MainMenuBarPerformanceBarFrame = "UIParent",
@@ -3568,7 +3568,7 @@ function MovAny:UpdateGUI(recount)
 				if o.collapsed and o.items > 0 then
 					text:SetText("+ "..o.displayName)
 				else
-					text:SetText("-  "..o.displayName)
+					text:SetText("   "..o.displayName)
 				end
 				frameNameLabel.tooltipLines = nil
 			else
@@ -4854,23 +4854,23 @@ function MovAny:GetFrameTooltipLines(fn)
 	if opts then
 		if opts.hidden then
 			if o.hideList then
-				tinsert(msgs, "Specially hidden")
+				tinsert(msgs, MOVANY.SPECIALLY_HIDDEN)
 			else
-				tinsert(msgs, "Hidden")
+				tinsert(msgs, MOVANY.HIDDEN)
 			end
 			enough = true
 		end
 	end
 	if o and o.displayName and o.displayName ~= fn and fn ~= nil then
 		tinsert(msgs, " ")
-		tinsert(msgs, "Frame: "..fn)
+		tinsert(msgs, MOVANY.FRAME..": "..fn)
 	end
 	if opts then
 		if opts.pos then
 			if not added then
 				tinsert(msgs, " ")
 			end
-			tinsert(msgs, "Position: "..MANumFor(opts.pos[4])..", "..MANumFor(opts.pos[5]))
+			tinsert(msgs, MOVANY.POSITION..": "..MANumFor(opts.pos[4])..", "..MANumFor(opts.pos[5]))
 			enough = true
 			added = true
 		end
@@ -4878,7 +4878,7 @@ function MovAny:GetFrameTooltipLines(fn)
 			if not added then
 				tinsert(msgs, " ")
 			end
-			tinsert(msgs, "Scale: "..MANumFor(opts.scale))
+			tinsert(msgs, MOVANY.SCALE..": "..MANumFor(opts.scale))
 			enough = true
 			added = true
 		end
@@ -4886,7 +4886,7 @@ function MovAny:GetFrameTooltipLines(fn)
 			if not added then
 				tinsert(msgs, " ")
 			end
-			tinsert(msgs, "Alpha: "..MANumFor(opts.alpha))
+			tinsert(msgs, MOVANY.ALPHA..": "..MANumFor(opts.alpha))
 			enough = true
 			added = true
 		end
@@ -4895,7 +4895,7 @@ function MovAny:GetFrameTooltipLines(fn)
 			if not added then
 				tinsert(msgs, " ")
 			end
-			tinsert(msgs, "Original Scale: "..MANumFor(opts.orgScale or 1))
+			tinsert(msgs, MOVANY.ORIGINAL_SCALE..": "..MANumFor(opts.orgScale or 1))
 			enough = true
 			added = true
 		end
@@ -4903,7 +4903,7 @@ function MovAny:GetFrameTooltipLines(fn)
 			if not added then
 				tinsert(msgs, " ")
 			end
-			tinsert(msgs, "Original Alpha: "..MANumFor(opts.orgAlpha))
+			tinsert(msgs, MOVANY.ORIGINAL_ALPHA..": "..MANumFor(opts.orgAlpha))
 			enough = true
 			added = true
 		end

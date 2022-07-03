@@ -601,7 +601,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						self.tooltipText = "Closes this window\n\nCtrl-Shift-Alt click reloads the interface"
+						self.tooltipText = MOVANY.CLOSE_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						if IsShiftKeyDown() and IsControlKeyDown() and IsAltKeyDown() then
@@ -624,7 +624,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						self.tooltipText = "Toggle options"
+						self.tooltipText = MOVANY.OPEN_BLIZZARD_OPTIONS_BUTTON_TOOLTIP
 					</OnLoad>
 					<OnClick>
 						if InterfaceOptionsFrame:IsVisible() and MoveAnythingOptions:IsVisible() then
@@ -647,7 +647,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						self.tooltipText = "Synchronize elements modified by MoveAnything"
+						self.tooltipText = MOVANY.SYNC_BUTTON_TOOLTIP2
 					</OnLoad>
 					<OnClick>
 						MovAny:SyncAllFrames()

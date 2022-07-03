@@ -1716,10 +1716,10 @@ function MovAny:CreateFrameEditor(id, name)
 
 	local strataLabel = fe:CreateFontString()
 	strataLabel:SetFontObject("GameFontNormalSmall")
-	strataLabel:SetSize(35, 20)
-	strataLabel:SetJustifyH("LEFT")
+	strataLabel:SetSize(80, 20)
+	strataLabel:SetJustifyH("RIGHT")
 	strataLabel:SetPoint("TOPLEFT", layersResetButton, "TOPRIGHT", 30, 0)
-	strataLabel:SetText(MOVANY.STRATA..":")
+	strataLabel:SetText(MOVANY.FRAME_STRATA..":")
 
 	local strataDropDownButton = MSA_DropDownMenu_Create(fn.."Strata", fe)
 	strataDropDownButton:SetID(3)
@@ -1881,7 +1881,7 @@ function MovAny:CreateFrameEditor(id, name)
 	revertButton:SetSize(75, 22)
 	revertButton:SetPoint("TOPLEFT", fe, "BOTTOMRIGHT", -180, 140)
 	revertButton:SetText(MOVANY.REVERT)
-	revertButton.tooltipText = "Revert to the modifications this element had when this editor was opened"
+	revertButton.tooltipText = MOVANY.REVERT_BUTTON_TOOLTIP
 	revertButton:SetScript("OnClick", function()
 		if fe.editFrame and (InCombatLockdown() and MovAny:IsProtected(fe.editFrame)) then
 			maPrint(string.format(MOVANY.FRAME_PROTECTED_DURING_COMBAT, fe.e.name))
@@ -1911,7 +1911,7 @@ function MovAny:CreateFrameEditor(id, name)
 	resetButton:SetSize(75, 22)
 	resetButton:SetPoint("TOPLEFT", revertButton, "BOTTOMLEFT", 0, -10)
 	resetButton:SetText(MOVANY.RESET)
-	resetButton.tooltipText = "Reset element"
+	resetButton.tooltipText = MOVANY.RESET_BUTTON_TOOLTIP
 	resetButton:SetScript("OnClick", function()
 		if not fe.editFrame then
 			return
@@ -1932,7 +1932,7 @@ function MovAny:CreateFrameEditor(id, name)
 	syncButton:SetPoint("TOPLEFT", exportButton, "BOTTOMLEFT", 0, -10)
 	syncButton:SetText(MOVANY.SYNC)
 	syncButton:Disable()
-	syncButton.tooltipText = "Synchronize all modifications"
+	syncButton.tooltipText = MOVANY.SYNC_BUTTON_TOOLTIP
 	syncButton:SetScript("OnClick", function()
 		if fe.editFrame then
 			fe.e:Sync()
@@ -1943,8 +1943,8 @@ function MovAny:CreateFrameEditor(id, name)
 	local moverButton = CreateFrame("Button", fn.."MoverButton", fe, "MAButtonTemplate")
 	moverButton:SetSize(75, 22)
 	moverButton:SetPoint("TOPLEFT", revertButton, "TOPRIGHT", 10, 0)
-	moverButton:SetText(MOVANY.MOVER)
-	moverButton.tooltipText = "Toggles a mover on/off for the frame"
+	moverButton:SetText(MOVANY.LIST_HEADING_MOVER)
+	moverButton.tooltipText = MOVANY.MOVER_BUTTON_TOOLTIP
 	moverButton:SetScript("OnClick", function(self)
 		MovAny:ToggleMove(fe.e.name)
 		fe:UpdateButtons()
@@ -1955,7 +1955,7 @@ function MovAny:CreateFrameEditor(id, name)
 	showButton:SetSize(75, 22)
 	showButton:SetPoint("TOPLEFT", moverButton, "BOTTOMLEFT", 0, -10)
 	showButton:SetText(MOVANY.SHOW)
-	showButton.tooltipText = "Toggles visibility of the frame, any change is not permanent. For permanent hiding use the \"Hidden\" checkbox"
+	showButton.tooltipText = MOVANY.SHOW_BUTTON_TOOLTIP
 	showButton:SetScript("OnClick", function(self)
 		local opt = fe.opt
 		local f = fe.editFrame
@@ -2329,7 +2329,7 @@ function MovAny:CreateFrameEditor(id, name)
 		if fe.editFrame then
 			local mover = MovAny:GetMoverByFrame(fe.editFrame)
 			moverButton:Enable()
-			moverButton:SetText(mover and "Detach" or "Attach")
+			moverButton:SetText(mover and MOVANY.DETACH or MOVANY.ATTACH)
 			if mover then
 				syncButton:Disable()
 			else
@@ -2342,7 +2342,7 @@ function MovAny:CreateFrameEditor(id, name)
 
 		if fe.editFrame then
 			showButton:Enable()
-			showButton:SetText(fe.editFrame:IsShown() and "Hide" or "Show")
+			showButton:SetText(fe.editFrame:IsShown() and MOVANY.LIST_HEADING_HIDE or MOVANY.SHOW)
 		else
 			showButton:Disable()
 		end

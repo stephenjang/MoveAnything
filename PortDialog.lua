@@ -254,10 +254,10 @@ function MovAny:CreatePortDialog()
 		local s = ""
 		local dir = ""
 		if mode == 1 then
-			s = MOVANY.MA_OPT_PROFILE_IMPORT
+			s = MOVANY.IMPORT
 			dir = MOVANY.MA_OPT_PROFILE_FROM
 		else
-			s = MOVANY.MA_OPT_PROFILE_EXPORT
+			s = MOVANY.EXPORT
 			dir = MOVANY.MA_OPT_PROFILE_TO
 		end
 		actionButton:SetText(s)
